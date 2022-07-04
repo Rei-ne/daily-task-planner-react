@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 
 
 function App() {
+  // Use state to add tasks
   const [showAddTasks, setShowAddTasks] = useState(false)
 
   const [tasks, setTasks] = useState([])
@@ -43,14 +44,14 @@ function App() {
 
   // fetch task
 
-  const fetchTask = async (id) => {
+  // const fetchTask = async (id) => {
 
-    const res = await fetch(`http://localhost:5000/tasks/${id}`)
-    const data = await res.json()
+  //   const res = await fetch(`http://localhost:5000/tasks/${id}`)
+  //   const data = await res.json()
 
-    return data
+  //   return data
 
-  }
+  // }
 
 
 
@@ -91,38 +92,41 @@ function App() {
 
 
   // Toggle reminder
-  const toggleReminder = async (id) => {
-    const taskToToggle = await fetchTask(id)
-    const updateTask = {
-      ...taskToToggle, reminder: !taskToToggle.reminder
-    }
+  // const toggleReminder = async (id) => {
+  //   const taskToToggle = await fetchTask(id)
+  //   const updateTask = {
+  //     ...taskToToggle, reminder: !taskToToggle.reminder
+  //   }
 
-    const res = await fetch(`http://localhost:5000/tasks/${id}`,
-      {
-        method: 'PUT',
-        headers: {
-          'Content-type': 'application/json',
+  //   const res = await fetch(`http://localhost:5000/tasks/${id}`,
+  //     {
+  //       method: 'PUT',
+  //       headers: {
+  //         'Content-type': 'application/json',
 
-        },
-        body: JSON.stringify(updateTask)
+  //       },
+  //       body: JSON.stringify(updateTask)
 
-      }
-    )
+  //     }
+  //   )
 
-    const data = await res.json()
+  //   const data = await res.json()
 
-    setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: data.reminder } : task)
-    )
-  }
+  //   setTasks(tasks.map((task) => task.id === id ? { ...task, reminder: data.reminder } : task)
+  //   )
+  // }
 
 
   return (
     <div className="container">
       <Header onAdd={() => setShowAddTasks(!showAddTasks)} showAdd={showAddTasks} />
       {showAddTasks && <AddTask onAdd={addTask} />}
-      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} onToggle={toggleReminder} /> : 'No tasks'}
+      {tasks.length > 0 ? <Tasks tasks={tasks} onDelete={deleteTask} /> : 'You have no tasks'}
     </div>
+    // onToggle={toggleReminder}
   );
+
+
 }
 
 export default App

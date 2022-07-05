@@ -28,10 +28,106 @@ code {
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 30px;
   border-radius:10px;
 }
+
+/* you have no tasks */
+
+.paragraph {
+  padding: 1px;
+  margin: 5px 30px;
+  letter-spacing: 2px;
+
+  }
+  .form-control label{
+    margin-left: 20px;
+    }
+
+    .form-control input placeholder{
+      font-size: 10px !important;
+      padding-left: 20px;
+
+
+    }
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+      gap: 10px;
+    }
+
+    h1{
+
+    padding-left: 20px;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #000;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      margin: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 15px;
+      font-family: inherit;
+    }
+
+    .btn:focus {
+      outline: none;
+    }
+
+    .btn:active {
+      transform: scale(0.98);
+    }
+
+    .btn-save {
+      display: block;
+      width: 100%;
+    }
+
+    .task {
+      background: #f4f4f4;
+      margin: 5px;
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+
+
+    .task h3 {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .add-form {
+      margin-bottom: 40px;
+    }
+
+    .form-control {
+      margin: 20px 0;
+    }
+
+    .form-control label {
+      display: block;
+    }
+
+    .form-control input {
+      width: 100%;
+      height: 40px;
+      margin: 5px;
+      padding: 3px 7px;
+    border-radius: 3px;
+    border: none;
+
+    }
+
 @media (max-width: 768px){
 
   .container {
@@ -39,7 +135,7 @@ code {
     margin: 30px auto;
     overflow: auto;
     min-height: 500px;
-    border: 1px solid black;
+    border: 1.5px solid white;
     padding: 30px;
     border-radius:10px;
   }
@@ -47,6 +143,12 @@ h1 {
   font-size: 17px !important;
   }
 
+  .paragraph {
+    padding: 15px;
+    margin: 15px 10px;
+    letter-spacing: 2px;
+    font-size: 10px;
+    }
 body {
   font-size: 13px;
 }
@@ -62,88 +164,62 @@ margin-left: 10px;
 }
 
 }
+/* smaller screens */
+@media (max-width: 380px){
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-  gap: 10px;
+.container{
+  width: 250px;
+  margin: 30px auto;
+  overflow: auto;
+  min-height: 350px;
+  border: 1.5px solid white;
+  padding: 20px;
+  border-radius:10px;
 }
 
-h1{
-font-size: 25px;
-padding-left: 20px;
+h1 {
+  font-size: 14px !important;
+
+  }
+/* you have no tasks */
+  .paragraph {
+    padding: 15px 25px;
+    margin: 25px 10px;
+    letter-spacing: 2.8px;
+    font-size: 10px;
+    }
+/* task form */
+    .form-control label{
+      margin-left: 12px;
+      }
+
+    .form-control input placeholder{
+      padding: auto;
+      text-align: center;
+    }
+    .form-control input {
+padding: 25px auto ;
+max-width: 95%;
+margin-left: 7px;
+    }
+
+    /* save button */
+    .btn-save{
+      width: 95%;
+      max-width: 95%;
+      margin-left: 7px;
+      padding: 15px 20px;
+    }
+    
+/*add/close button */
+.showbtn {
+padding: 15px;
+}
 }
 
-.btn {
-  display: inline-block;
-  background: #000;
-  color: #fff;
-  border: none;
-  padding: 10px 20px;
-  margin: 5px;
-  border-radius: 5px;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 15px;
-  font-family: inherit;
-}
-
-.btn:focus {
-  outline: none;
-}
-
-.btn:active {
-  transform: scale(0.98);
-}
-
-.btn-block {
-  display: block;
-  width: 100%;
-}
-
-.task {
-  background: #f4f4f4;
-  margin: 5px;
-  padding: 10px 20px;
-  cursor: pointer;
-}
 
 
 
-.task h3 {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.add-form {
-  margin-bottom: 40px;
-}
-
-.form-control {
-  margin: 20px 0;
-}
-
-.form-control label {
-  display: block;
-}
-
-.form-control input {
-  width: 100%;
-  height: 40px;
-  margin: 5px;
-  padding: 3px 7px;
-  font-size: 17px;
-
-}
-
-.form-control-check {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
 
 
 

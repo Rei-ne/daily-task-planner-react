@@ -35,10 +35,10 @@ code {
 @media (max-width: 768px){
 
   .container {
-    max-width: 300px;
+    width: 350px;
     margin: 30px auto;
     overflow: auto;
-    height: 700px;
+    min-height: 500px;
     border: 1px solid black;
     padding: 30px;
     border-radius:10px;
@@ -50,6 +50,7 @@ h1 {
 body {
   font-size: 13px;
 }
+
 .form-control label{
 margin-left: 10px;
 }

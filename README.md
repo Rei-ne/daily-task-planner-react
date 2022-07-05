@@ -6,7 +6,7 @@
 
 - Will be updating daily
 
-- Click on this [link]() to view live
+- Click on this [link](https://reine-task-planner.netlify.app/) to view live
 
 ### License
 

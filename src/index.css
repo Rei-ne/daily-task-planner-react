@@ -3,8 +3,8 @@
 
 body {
   margin: 0;
-  background: linear-gradient(92.24deg, #cde4c5 5.59%, #faebc4 93.42%);
-
+  background: linear-gradient(to right, #1d4350, #a43931); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+color: white;
 
 }
 

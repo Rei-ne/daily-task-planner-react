@@ -2,7 +2,7 @@
 
 - I made this to help keep track of my daily plans
 
-## Project built with React js and node
+## Project built with React js and Firebase
 
 - Will be updating daily
 

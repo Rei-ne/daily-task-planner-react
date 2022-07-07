@@ -1,10 +1,12 @@
 import { useState } from 'react'
+import DatePicker from 'react-datepicker'
+import "react-datepicker/dist/react-datepicker.css"
 
 //functional component that adds a task
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState("")
-    const [day, setDay] = useState("")
-    // const [reminder, setReminder] = useState(false)
+    const [selectedDate, setSelectedDate] = useState(null)
+
 
 
     const onSubmit = (e) => {
@@ -15,13 +17,13 @@ const AddTask = ({ onAdd }) => {
             return
         }
 
-        onAdd({ text, day })
+        onAdd({ text, selectedDate })
 
         // update the state
 
         setText("")
-        setDay("")
-        // setReminder(false)
+        setSelectedDate(null)
+
     }
 
     // the react ui
@@ -32,14 +34,16 @@ const AddTask = ({ onAdd }) => {
                 <label>Task</label>
                 <input type='text' placeholder='Add Task' value={text} onChange={(e) => setText(e.target.value)} />
             </div>
-            <div className="form-control">
-                <label>Date and Time</label>
-                <input type='text' placeholder='Add Date, Time' value={day} onChange={(e) => setDay(e.target.value)} />
+            <div className="form-control datepicker">
+                <label>Date</label>
+                <DatePicker
+                    selected={selectedDate}
+                    onChange={date => setSelectedDate(date)}
+                    placeholderText={'dd/mm/yyyy'}
+                    filterDate={date => date.getDay() !== 6 && date.getDay() !== 0} // weekends cancel
+                    showYearDropdown // year show and scrolldown alos
+                />
             </div>
-            {/* <div className="form-control form-control-check">
-                <label>Set Reminder</label>
-                <input type='checkbox' checked={reminder} value={reminder} onChange={(e) => setReminder(e.currentTarget.checked)} />
-            </div> */}
 
             <input type="submit" value='Save Task' className="btn btn-save" />
         </form>
